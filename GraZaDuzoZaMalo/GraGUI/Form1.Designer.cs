@@ -30,19 +30,23 @@
         {
             this.buttonNowaGra = new System.Windows.Forms.Button();
             this.groupBoxLosowanie = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxOd = new System.Windows.Forms.TextBox();
-            this.textBoxDo = new System.Windows.Forms.TextBox();
             this.buttonLosuj = new System.Windows.Forms.Button();
+            this.textBoxDo = new System.Windows.Forms.TextBox();
+            this.textBoxOd = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonPoddaj = new System.Windows.Forms.Button();
             this.groupBoxOdgadywanie = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonWyśłij = new System.Windows.Forms.Button();
             this.labelOcena = new System.Windows.Forms.Label();
+            this.buttonWyslij = new System.Windows.Forms.Button();
+            this.textBoxPropozycja = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBoxStatystyki = new System.Windows.Forms.GroupBox();
+            this.labelLiczbaRuchow = new System.Windows.Forms.Label();
+            this.labelCzasGry = new System.Windows.Forms.Label();
             this.groupBoxLosowanie.SuspendLayout();
             this.groupBoxOdgadywanie.SuspendLayout();
+            this.groupBoxStatystyki.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonNowaGra
@@ -70,14 +74,31 @@
             this.groupBoxLosowanie.Text = "Losowanie";
             this.groupBoxLosowanie.Visible = false;
             // 
-            // label1
+            // buttonLosuj
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "od: ";
+            this.buttonLosuj.Location = new System.Drawing.Point(193, 51);
+            this.buttonLosuj.Name = "buttonLosuj";
+            this.buttonLosuj.Size = new System.Drawing.Size(75, 23);
+            this.buttonLosuj.TabIndex = 4;
+            this.buttonLosuj.Text = "Losuj";
+            this.buttonLosuj.UseVisualStyleBackColor = true;
+            this.buttonLosuj.Click += new System.EventHandler(this.buttonLosuj_Click);
+            // 
+            // textBoxDo
+            // 
+            this.textBoxDo.Location = new System.Drawing.Point(56, 78);
+            this.textBoxDo.Name = "textBoxDo";
+            this.textBoxDo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDo.TabIndex = 3;
+            this.textBoxDo.TextChanged += new System.EventHandler(this.textBoxDo_TextChanged);
+            // 
+            // textBoxOd
+            // 
+            this.textBoxOd.Location = new System.Drawing.Point(56, 25);
+            this.textBoxOd.Name = "textBoxOd";
+            this.textBoxOd.Size = new System.Drawing.Size(100, 20);
+            this.textBoxOd.TabIndex = 2;
+            this.textBoxOd.TextChanged += new System.EventHandler(this.textBoxOd_TextChanged);
             // 
             // label2
             // 
@@ -88,30 +109,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "do: ";
             // 
-            // textBoxOd
+            // label1
             // 
-            this.textBoxOd.Location = new System.Drawing.Point(56, 25);
-            this.textBoxOd.Name = "textBoxOd";
-            this.textBoxOd.Size = new System.Drawing.Size(100, 20);
-            this.textBoxOd.TabIndex = 2;
-            // 
-            // textBoxDo
-            // 
-            this.textBoxDo.Location = new System.Drawing.Point(56, 78);
-            this.textBoxDo.Name = "textBoxDo";
-            this.textBoxDo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDo.TabIndex = 3;
-            this.textBoxDo.TextChanged += new System.EventHandler(this.textBoxDo_TextChanged);
-            // 
-            // buttonLosuj
-            // 
-            this.buttonLosuj.Location = new System.Drawing.Point(193, 51);
-            this.buttonLosuj.Name = "buttonLosuj";
-            this.buttonLosuj.Size = new System.Drawing.Size(75, 23);
-            this.buttonLosuj.TabIndex = 4;
-            this.buttonLosuj.Text = "Losuj";
-            this.buttonLosuj.UseVisualStyleBackColor = true;
-            this.buttonLosuj.Click += new System.EventHandler(this.buttonLosuj_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "od: ";
             // 
             // buttonPoddaj
             // 
@@ -127,8 +132,8 @@
             // groupBoxOdgadywanie
             // 
             this.groupBoxOdgadywanie.Controls.Add(this.labelOcena);
-            this.groupBoxOdgadywanie.Controls.Add(this.buttonWyśłij);
-            this.groupBoxOdgadywanie.Controls.Add(this.textBox1);
+            this.groupBoxOdgadywanie.Controls.Add(this.buttonWyslij);
+            this.groupBoxOdgadywanie.Controls.Add(this.textBoxPropozycja);
             this.groupBoxOdgadywanie.Controls.Add(this.label3);
             this.groupBoxOdgadywanie.Location = new System.Drawing.Point(21, 237);
             this.groupBoxOdgadywanie.Name = "groupBoxOdgadywanie";
@@ -137,31 +142,6 @@
             this.groupBoxOdgadywanie.TabStop = false;
             this.groupBoxOdgadywanie.Text = "Odgadywanie";
             this.groupBoxOdgadywanie.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Wylosowałem liczbę. Odgadnij ją!";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // buttonWyśłij
-            // 
-            this.buttonWyśłij.Location = new System.Drawing.Point(178, 41);
-            this.buttonWyśłij.Name = "buttonWyśłij";
-            this.buttonWyśłij.Size = new System.Drawing.Size(75, 23);
-            this.buttonWyśłij.TabIndex = 2;
-            this.buttonWyśłij.Text = "Wyślij";
-            this.buttonWyśłij.UseVisualStyleBackColor = true;
             // 
             // labelOcena
             // 
@@ -172,11 +152,68 @@
             this.labelOcena.TabIndex = 3;
             this.labelOcena.Text = "label4";
             // 
+            // buttonWyslij
+            // 
+            this.buttonWyslij.Location = new System.Drawing.Point(178, 41);
+            this.buttonWyslij.Name = "buttonWyslij";
+            this.buttonWyslij.Size = new System.Drawing.Size(75, 23);
+            this.buttonWyslij.TabIndex = 2;
+            this.buttonWyslij.Text = "Wyślij";
+            this.buttonWyslij.UseVisualStyleBackColor = true;
+            this.buttonWyslij.Click += new System.EventHandler(this.buttonWyśłij_Click);
+            // 
+            // textBoxPropozycja
+            // 
+            this.textBoxPropozycja.Location = new System.Drawing.Point(9, 44);
+            this.textBoxPropozycja.Name = "textBoxPropozycja";
+            this.textBoxPropozycja.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPropozycja.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(166, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Wylosowałem liczbę. Odgadnij ją!";
+            // 
+            // groupBoxStatystyki
+            // 
+            this.groupBoxStatystyki.Controls.Add(this.labelCzasGry);
+            this.groupBoxStatystyki.Controls.Add(this.labelLiczbaRuchow);
+            this.groupBoxStatystyki.Location = new System.Drawing.Point(21, 406);
+            this.groupBoxStatystyki.Name = "groupBoxStatystyki";
+            this.groupBoxStatystyki.Size = new System.Drawing.Size(318, 139);
+            this.groupBoxStatystyki.TabIndex = 4;
+            this.groupBoxStatystyki.TabStop = false;
+            this.groupBoxStatystyki.Text = "Statystyki gry";
+            // 
+            // labelLiczbaRuchow
+            // 
+            this.labelLiczbaRuchow.AutoSize = true;
+            this.labelLiczbaRuchow.Location = new System.Drawing.Point(21, 36);
+            this.labelLiczbaRuchow.Name = "labelLiczbaRuchow";
+            this.labelLiczbaRuchow.Size = new System.Drawing.Size(82, 13);
+            this.labelLiczbaRuchow.TabIndex = 0;
+            this.labelLiczbaRuchow.Text = "Liczba ruchów: ";
+            // 
+            // labelCzasGry
+            // 
+            this.labelCzasGry.AutoSize = true;
+            this.labelCzasGry.Location = new System.Drawing.Point(21, 68);
+            this.labelCzasGry.Name = "labelCzasGry";
+            this.labelCzasGry.Size = new System.Drawing.Size(50, 13);
+            this.labelCzasGry.TabIndex = 1;
+            this.labelCzasGry.Text = "Czas gry:";
+            this.labelCzasGry.Click += new System.EventHandler(this.labelCzasGry_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 557);
+            this.Controls.Add(this.groupBoxStatystyki);
             this.Controls.Add(this.groupBoxOdgadywanie);
             this.Controls.Add(this.buttonPoddaj);
             this.Controls.Add(this.groupBoxLosowanie);
@@ -187,6 +224,8 @@
             this.groupBoxLosowanie.PerformLayout();
             this.groupBoxOdgadywanie.ResumeLayout(false);
             this.groupBoxOdgadywanie.PerformLayout();
+            this.groupBoxStatystyki.ResumeLayout(false);
+            this.groupBoxStatystyki.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -203,9 +242,12 @@
         private System.Windows.Forms.Button buttonPoddaj;
         private System.Windows.Forms.GroupBox groupBoxOdgadywanie;
         private System.Windows.Forms.Label labelOcena;
-        private System.Windows.Forms.Button buttonWyśłij;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button buttonWyslij;
+        private System.Windows.Forms.TextBox textBoxPropozycja;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBoxStatystyki;
+        private System.Windows.Forms.Label labelCzasGry;
+        private System.Windows.Forms.Label labelLiczbaRuchow;
     }
 }
 
